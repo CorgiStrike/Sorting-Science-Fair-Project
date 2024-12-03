@@ -1,18 +1,11 @@
-## Getting Started
+## Introduction
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This is a project created for my Honors Chemistry Science Fair Project. The program creates multiple datasets of varying sizes and sorts them using 10 different sorting algorithims. The datasets range from 1,000 items to 1,000,000 items, increasing by a factor of 10 each time. The 10 sorting algorithims used were "Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort", "Quick Sort", "Heap Sort", "Counting Sort", "Radix Sort", "Shell Sort", and "Tim Sort".
 
-## Folder Structure
+## More Information on the Algorithims
 
-The workspace contains two folders by default, where:
+TBF
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Project Findings
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+TBF
