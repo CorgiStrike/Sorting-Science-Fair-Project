@@ -16,8 +16,14 @@ public class SortingAlgorithms {
             //Generate a random array of the given size
             int[] array = random.ints(size, 0, 100000).toArray();
 
+            //bogo sort solution
+            int[] solution = new int[size];
+            for (int i = 0; i < size; i++) {
+                solution[i] = i+1;
+            }  
+            
             //Test each sorting algorithm
-            testSorter("Bubble Sort", array.clone(), SortingAlgorithms::bubbleSort);
+            /*testSorter("Bubble Sort", array.clone(), SortingAlgorithms::bubbleSort);
             testSorter("Selection Sort", array.clone(), SortingAlgorithms::selectionSort);
             testSorter("Insertion Sort", array.clone(), SortingAlgorithms::insertionSort);
             testSorter("Merge Sort", array.clone(), SortingAlgorithms::mergeSort);
@@ -26,7 +32,10 @@ public class SortingAlgorithms {
             testSorter("Counting Sort", array.clone(), SortingAlgorithms::countingSort);
             testSorter("Radix Sort", array.clone(), SortingAlgorithms::radixSort);
             testSorter("Shell Sort", array.clone(), SortingAlgorithms::shellSort);
-            testSorter("Tim Sort", array.clone(), Arrays::sort);
+            testSorter("Tim Sort", array.clone(), Arrays::sort);*/
+            testSorter("Bogo Sort", array.clone(), SortingAlgorithms::bogoSort);
+
+
 
             System.out.println();
         }
@@ -249,6 +258,34 @@ public class SortingAlgorithms {
                 }
                 array[j] = temp;
             }
+        }
+    }
+
+    //Bogo Sort
+    public static void bogoSort(int[] array) {
+        while (!isSorted(array)) {
+            shuffle(array);
+        }
+    }
+
+    private static boolean isSorted(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+              return false;
+            }
+        }
+
+        return true;
+    }
+
+    static void shuffle(int[] array) {
+        Random rnd = new Random();
+        for (int i = array.length - 1; i > 0; i--){
+            int index = rnd.nextInt(i + 1);
+            // Simple swap
+            int a = array[index];
+            array[index] = array[i];
+            array[i] = a;
         }
     }
 }
