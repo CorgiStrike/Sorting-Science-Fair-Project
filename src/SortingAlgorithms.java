@@ -1,30 +1,21 @@
 import java.util.Arrays;
-import java.util.Random;
 
 public class SortingAlgorithms {
     public static void main(String[] args) {
         //We're testing with these arry sizes as they provide a good amount of variablity without taking 8 hours to run (I'm looking at you 10,000,000 item bubble sort)
         int[] sizes = {10,100,1000,10000,100000,1000000};
 
-        //Initialize random number generator
-        Random random = new Random();
-
         //Test all sorting algorithms
         for (int size : sizes) {
             System.out.println("Array size: " + size);
 
             //Generate a random array of the given size
-            int[] array = random.ints(size, 0, 100000).toArray();
+            int[] array = generateArray(size);
 
-            //bogo sort solution
-            int[] solution = new int[size];
-            for (int i = 0; i < size; i++) {
-                solution[i] = i+1;
-            }  
-            
             //Test each sorting algorithm
-            /*testSorter("Bubble Sort", array.clone(), SortingAlgorithms::bubbleSort);
-            testSorter("Selection Sort", array.clone(), SortingAlgorithms::selectionSort);
+
+            //testSorter("Bubble Sort", array.clone(), SortingAlgorithms::bubbleSort);
+            //testSorter("Selection Sort", array.clone(), SortingAlgorithms::selectionSort);
             testSorter("Insertion Sort", array.clone(), SortingAlgorithms::insertionSort);
             testSorter("Merge Sort", array.clone(), SortingAlgorithms::mergeSort);
             testSorter("Quick Sort", array.clone(), SortingAlgorithms::quickSort);
@@ -32,10 +23,12 @@ public class SortingAlgorithms {
             testSorter("Counting Sort", array.clone(), SortingAlgorithms::countingSort);
             testSorter("Radix Sort", array.clone(), SortingAlgorithms::radixSort);
             testSorter("Shell Sort", array.clone(), SortingAlgorithms::shellSort);
-            testSorter("Tim Sort", array.clone(), Arrays::sort);*/
-            testSorter("Bogo Sort", array.clone(), SortingAlgorithms::bogoSort);
+            testSorter("Tim Sort", array.clone(), Arrays::sort);
 
+            //These are joke sorters (not part of the science fair project). Their code is in the ExtraSortingAlgorithms.java file
 
+            //testSorter("Bogo Sort", array.clone(), ExtraSortingAlgorithms::bogoSort);
+            //testSorter("Stalin Sort", array.clone(), ExtraSortingAlgorithms::stalinSort);
 
             System.out.println();
         }
@@ -52,6 +45,16 @@ public class SortingAlgorithms {
     //Sorting algorithm interfaces
     interface Sorter {
         void sort(int[] array);
+    }
+
+    private static int[] generateArray(int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = i+1;
+        }
+        ExtraSortingAlgorithms.shuffle(array);
+
+        return array;
     }
 
     //Bubble Sort
@@ -258,34 +261,6 @@ public class SortingAlgorithms {
                 }
                 array[j] = temp;
             }
-        }
-    }
-
-    //Bogo Sort
-    public static void bogoSort(int[] array) {
-        while (!isSorted(array)) {
-            shuffle(array);
-        }
-    }
-
-    private static boolean isSorted(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
-              return false;
-            }
-        }
-
-        return true;
-    }
-
-    static void shuffle(int[] array) {
-        Random rnd = new Random();
-        for (int i = array.length - 1; i > 0; i--){
-            int index = rnd.nextInt(i + 1);
-            // Simple swap
-            int a = array[index];
-            array[index] = array[i];
-            array[i] = a;
         }
     }
 }
