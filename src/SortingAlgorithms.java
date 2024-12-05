@@ -2,7 +2,8 @@ import java.util.Arrays;
 
 public class SortingAlgorithms {
     public static void main(String[] args) {
-        //We're testing with these arry sizes as they provide a good amount of variablity without taking 8 hours to run (I'm looking at you 10,000,000 item bubble sort)
+
+        //We're testing with these array sizes as they provide a good amount of variablity without taking 8 hours to run (I'm looking at you 10,000,000 item bubble sort)
         int[] sizes = {10,100,1000,10000,100000,1000000};
 
         //Test all sorting algorithms
@@ -14,8 +15,8 @@ public class SortingAlgorithms {
 
             //Test each sorting algorithm
 
-            //testSorter("Bubble Sort", array.clone(), SortingAlgorithms::bubbleSort);
-            //testSorter("Selection Sort", array.clone(), SortingAlgorithms::selectionSort);
+            testSorter("Bubble Sort", array.clone(), SortingAlgorithms::bubbleSort);
+            testSorter("Selection Sort", array.clone(), SortingAlgorithms::selectionSort);
             testSorter("Insertion Sort", array.clone(), SortingAlgorithms::insertionSort);
             testSorter("Merge Sort", array.clone(), SortingAlgorithms::mergeSort);
             testSorter("Quick Sort", array.clone(), SortingAlgorithms::quickSort);
