@@ -3,35 +3,35 @@
 This is a project created for my Honors Chemistry Science Fair Project. The program creates multiple datasets of varying sizes and sorts them using 10 different sorting algorithms. The datasets range from 10 items to 1,000,000 items, increasing by a factor of 10 each time. The 10 sorting algorithms used were "Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort", "Quick Sort", "Heap Sort", "Counting Sort", "Radix Sort", "Shell Sort", and "Tim Sort".
 
 ## More Information on the Algorithims
-**Bubble Sort**
+**Bubble Sort:**
 Checks elements next to each other to see if they’re in order, if they aren’t, it swaps them, which it repeats until the dataset is sorted.
 
-**Selection Sort**
+**Selection Sort:**
 Chooses the smallest element in the unsorted dataset and moves it to the sorted one, which continues until the dataset is sorted.
 
-**Insertion Sort**
+**Insertion Sort:**
 Chooses each element and moves it into its sorted position.
 
-**Merge Sort**
+**Merge Sort:**
 Splits the data in half, sorts them, then sorts the merged datasets.
 
-**QuickSort**
+**QuickSort:**
 Picks a “pivot” element where it sorts the list into numbers less than and greater than the pivot number, then combining them.
 
-**Heap Sort**
+**Heap Sort:**
 Uses a binary heap to repeatedly extract the maximum element until the dataset is sorted.
 
 
-**Counting Sort**
+**Counting Sort:**
 Counts the number of occurrences of an element and then uses the count to sort the dataset. 
 
-**Radix Sort**
+**Radix Sort:**
 Sorts numbers by processing digits from least to most significant.
 
-**Shell Sort**
+**Shell Sort:**
 Sorts numbers based on how they are sorted by a “gap”, making it an optimized Insertion Sort.
 
-**Tim Sort**
+**Tim Sort:**
 A hybrid algorithm between Merge Sort and Insertion Sort, generally regarded as simple and fast.
 
 ## Project Findings
